@@ -1,17 +1,9 @@
-var button = document.querySelector('.button2')
-var h1 = document.querySelector('.text')
+const button = document.querySelector('.button2');
+const wrapper = document.querySelector('.wrapper');
 
-button.addEventListener('click', handleLinkClick)
+button.addEventListener('click', handleLinkClick);
 
-function handleLinkClick (event) {
-    const appendedDiv = `
-        <div class = "text">Текст, который выводится</div>
-    `;
-
-    if (h1.style.display === 'none') {
-        h1.style.display = 'flex'
-        h1.innerHTML = 'Текст, который выводится'
-    } else {
-        h1.insertAdjacentHTML("afterend", appendedDiv);
-    }
+function handleLinkClick () {
+    const appendedDiv = `<div class = "text">Текст, который выводится</div>`;
+    wrapper.insertAdjacentHTML("beforeend", appendedDiv);
 }
